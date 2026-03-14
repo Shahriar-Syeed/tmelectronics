@@ -1,0 +1,91 @@
+.site-header {
+  @apply bg-white border-b border-slate-200;
+}
+
+.header-top {
+  @apply hidden xl:block border-b border-slate-200;
+}
+
+.header-top__container {
+  @apply mx-auto max-w-[1440px] px-6;
+}
+
+.header-top__inner {
+  @apply flex items-center justify-between py-3;
+}
+
+.header-top__social {
+  @apply flex items-center divide-x divide-slate-300;
+}
+
+.header-top__social-link {
+  @apply px-3 text-slate-500 transition hover:text-sky-600;
+}
+
+.header-top__menu {
+  @apply flex items-center gap-6 text-sm text-slate-500;
+}
+
+.header-top__menu-link {
+  @apply transition hover:text-sky-600;
+}
+
+.header-main__container {
+  @apply mx-auto max-w-[1440px] px-4 sm:px-6;
+}
+
+.header-main__inner {
+  @apply flex flex-col gap-5 py-5 lg:flex-row lg:items-center lg:justify-between;
+}
+
+.header-main__brand {
+  @apply flex items-center gap-3;
+}
+
+.header-main__brand-icon {
+  @apply flex h-11 w-11 items-center justify-center rounded-xl bg-sky-600 text-white shadow-sm;
+}
+
+.header-main__search {
+  @apply w-full lg:max-w-2xl;
+}
+
+.header-main__search-box {
+  @apply flex items-center rounded-lg bg-slate-100 px-4 py-3 shadow-sm ring-1 ring-transparent transition focus-within:ring-sky-500;
+}
+
+.header-main__search-input {
+  @apply w-full bg-transparent text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none;
+}
+
+.header-main__icon-btn {
+  @apply flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 transition hover:border-sky-500 hover:text-sky-600;
+}
+
+.header-nav {
+  @apply bg-slate-900;
+}
+
+.header-nav__container {
+  @apply mx-auto max-w-[1440px] px-4 sm:px-6;
+}
+
+.header-nav__inner {
+  @apply flex items-center justify-between;
+}
+
+.header-nav__categories {
+  @apply hidden lg:flex min-w-[280px] items-center justify-between bg-sky-600 px-6 py-4 text-white transition hover:bg-sky-700;
+}
+
+.header-nav__list {
+  @apply flex items-center divide-x divide-slate-700 text-white;
+}
+
+.header-nav__link {
+  @apply block px-6 py-4 font-medium transition hover:text-sky-400;
+}
+
+.header-nav__mobile-toggle {
+  @apply flex h-12 w-12 items-center justify-center text-white lg:hidden;
+}

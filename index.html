@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/lib.min.js"
+    integrity="sha512-LBqpfYKfymp3VEoHOQharES5j6UyXzUP0Td5jk5j1Ekm9tsbAoGUi5VaGA+0gdAlqKvAUb+7iFBe6qQQ7Jwk0Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Electronic Store Header</title>
+</head>
+
+<body class="bg-white text-slate-800">
+
+  <!-- Hidden checkbox – this is the state keeper -->
+  <input type="checkbox" id="cart-toggle" class="hidden peer" />
+
+  <!-- Header -->
+  <header class="site-header border-b border-slate-200">
+
+    <!-- Top Bar -->
+    <div class="header-top hidden xl:block border-b border-slate-200">
+      <div class="header-top__container mx-auto max-w-[1440px] px-6">
+        <div class="header-top__inner flex items-center justify-between py-3">
+
+          <!-- Social -->
+          <div class="header-top__social flex items-center divide-x divide-slate-300">
+            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+              aria-label="Facebook">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z" />
+              </svg>
+            </a>
+            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+              aria-label="Twitter">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 5.8c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.2 1.7-2.1-.8.5-1.7.8-2.6 1-1.5-1.6-4.1-1.7-5.7-.2-1 1-1.4 2.4-1 3.7-3.3-.2-6.3-1.8-8.3-4.3-1.1 1.9-.5 4.3 1.3 5.5-.6 0-1.2-.2-1.7-.5 0 2 1.4 3.8 3.4 4.2-.6.2-1.2.2-1.8.1.5 1.7 2.1 2.9 4 2.9A8.3 8.3 0 0 1 2 18.4 11.7 11.7 0 0 0 8.3 20c7.5 0 11.8-6.4 11.5-12.1.8-.5 1.5-1.2 2.1-2.1z" />
+              </svg>
+            </a>
+            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+              aria-label="Instagram">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+              </svg>
+            </a>
+            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+              aria-label="YouTube">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23 12s0-3.5-.4-5.1c-.2-.9-.9-1.6-1.8-1.8C19.2 4.7 12 4.7 12 4.7s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.5 1 12 1 12s0 3.5.4 5.1c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-5.1.4-5.1zM10 15.5v-7l6 3.5-6 3.5z" />
+              </svg>
+            </a>
+            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+              aria-label="Pinterest">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2a10 10 0 0 0-3.6 19.3c0-.8 0-2 .3-2.9l1.4-5.8s-.3-.7-.3-1.8c0-1.7 1-2.9 2.2-2.9 1 0 1.5.8 1.5 1.7 0 1-.7 2.6-1.1 4-.3 1.2.6 2.1 1.8 2.1 2.2 0 3.7-2.8 3.7-6 0-2.5-1.7-4.4-4.8-4.4-3.5 0-5.6 2.6-5.6 5.5 0 1 .3 1.8.8 2.4.2.2.2.3.1.6l-.3 1.2c-.1.4-.4.5-.8.4-2.2-.9-3.2-3.2-3.2-5.8C4 6.3 7.3 3 12.5 3c4.6 0 7.7 3.3 7.7 6.9 0 4.7-2.6 8.3-6.5 8.3-1.3 0-2.5-.7-2.9-1.5l-.8 3.1c-.3 1.1-.9 2.4-1.4 3.2A10 10 0 1 0 12 2z" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Top Menu -->
+          <nav class="header-top__nav" aria-label="Top navigation">
+            <ul class="header-top__menu flex items-center gap-6 text-sm text-slate-500">
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">About</a></li>
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">Services</a></li>
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">Brands</a></li>
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">Blog</a></li>
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">FAQs</a></li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="header-main">
+      <div class="header-main__container mx-auto max-w-[1440px] px-4 sm:px-6">
+        <div class="header-main__inner flex flex-col gap-5 py-5 lg:flex-row lg:items-center lg:justify-between">
+
+          <!-- Logo -->
+          <a href="#" class="header-main__brand flex items-center gap-3">
+            <span
+              class="header-main__brand-icon flex h-11 w-11 items-center justify-center rounded-xl bg-sky-600 text-white shadow-sm">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 4h7v3h-7v-3z" />
+              </svg>
+            </span>
+            <div class="header-main__brand-text">
+              <span class="block text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">ELECTRONIC</span>
+              <span class="block text-xs uppercase tracking-[0.18em] text-slate-500">Smart Tech Store</span>
+            </div>
+          </a>
+
+          <!-- Search -->
+          <form class="header-main__search w-full lg:max-w-2xl" role="search">
+            <label for="product-search" class="sr-only">Search products</label>
+            <div
+              class="header-main__search-box flex items-center rounded-lg bg-slate-100 px-4 py-3 shadow-sm ring-1 ring-transparent transition focus-within:ring-sky-500">
+              <input id="product-search" type="search" placeholder="Search products..."
+                class="header-main__search-input w-full bg-transparent text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none" />
+              <button type="submit" class="header-main__search-btn ml-3 text-slate-600 hover:text-sky-600 transition"
+                aria-label="Search">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <path d="m20 20-3.5-3.5"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-main__actions flex flex-wrap items-center gap-4 sm:gap-6">
+
+            <!-- Selectors -->
+            <div class="header-main__selectors hidden md:flex items-center gap-4 text-sm text-slate-500">
+              <button class="header-main__selector flex items-center gap-1 hover:text-sky-600 transition">
+                <span>ENGLISH</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5 7l5 5 5-5H5z" />
+                </svg>
+              </button>
+              <button class="header-main__selector flex items-center gap-1 hover:text-sky-600 transition">
+                <span>USD</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5 7l5 5 5-5H5z" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="hidden md:block h-6 w-px bg-slate-300"></div>
+
+            <!-- Icons -->
+            <div class="header-main__icons flex items-center gap-2 sm:gap-3">
+              <a href="#"
+                class="header-main__icon-btn flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
+                aria-label="My account">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="4"></circle>
+                  <path d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5"></path>
+                </svg>
+              </a>
+
+              <a href="#"
+                class="header-main__icon-btn flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
+                aria-label="Wishlist">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path>
+                </svg>
+              </a>
+
+              <a href="#"
+                class="header-main__icon-btn relative flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
+                aria-label="Cart">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path d="M3 4h2l2.5 10h9.5l2-7H8"></path>
+                  <circle cx="10" cy="19" r="1.5"></circle>
+                  <circle cx="18" cy="19" r="1.5"></circle>
+                </svg>
+                <span
+                  class="header-main__cart-count absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-sky-600 text-[10px] font-semibold text-white">1</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="header-nav bg-slate-900">
+      <div class="header-nav__container mx-auto max-w-[1440px] px-4 sm:px-6">
+        <div class="header-nav__inner flex items-center justify-between">
+
+          <!-- Categories -->
+          <button
+            class="header-nav__categories hidden lg:flex min-w-[280px] items-center justify-between bg-sky-600 px-6 py-4 text-white hover:bg-sky-700 transition">
+            <span class="header-nav__categories-left flex items-center gap-3">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" />
+              </svg>
+              <span class="font-semibold">All Categories</span>
+            </span>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5 7l5 5 5-5H5z" />
+            </svg>
+          </button>
+
+          <!-- Desktop Menu -->
+          <nav class="header-nav__menu hidden lg:block flex-1" aria-label="Primary navigation">
+            <ul class="header-nav__list flex items-center divide-x divide-slate-700 text-white">
+              <li>
+                <div class="group relative">
+                  <a href="#"
+                    class="header-nav__link block px-6 py-4 font-medium hover:text-sky-400 transition">Home</a>
+                  <div class="absolute hidden group-hover:block mt-1 w-48 bg-white shadow-lg rounded-md p-2 z-10">
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Link 1</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Link 2</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Link 3</a>
+                  </div>
+                </div>
+              </li>
+              <li><a href="#"
+                  class="header-nav__link block px-6 py-4 font-medium hover:text-sky-400 transition">Features</a></li>
+              <li><a href="#"
+                  class="header-nav__link block px-6 py-4 font-medium hover:text-sky-400 transition">Shop</a></li>
+              <li><a href="#"
+                  class="header-nav__link block px-6 py-4 font-medium hover:text-sky-400 transition">Blog</a></li>
+              <li><a href="#"
+                  class="header-nav__link block px-6 py-4 font-medium hover:text-sky-400 transition">Product</a></li>
+              <li><a href="#"
+                  class="header-nav__link block px-6 py-4 font-medium hover:text-sky-400 transition">Pages</a></li>
+            </ul>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="header-nav__mobile-toggle lg:hidden flex h-12 w-12 items-center justify-center text-white"
+            aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+</body>
+
+</html>
