@@ -16,31 +16,86 @@
 
   <!-- Hidden checkbox – this is the state keeper -->
   <input type="checkbox" id="cart-toggle" class="hidden peer" />
+  <!-- Backdrop (also a label for the checkbox – clicking it closes the drawer) -->
+  <label for="cart-toggle"
+    class="fixed inset-0 bg-black bg-opacity-50 z-40 cursor-pointer transition-opacity peer-checked:opacity-100 opacity-0 pointer-events-none peer-checked:pointer-events-auto"></label>
+
+  <!-- Off-Canvas Cart Drawer -->
+  <aside
+    class="fixed top-0 right-0 h-full w-[450px] bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out translate-x-full peer-checked:translate-x-0">
+    <div class="p-6 flex flex-col gap-4 h-full">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold">Your Cart</h2>
+        <!-- Close button – also a label for the checkbox -->
+        <label for="cart-toggle" class="text-gray-500 hover:text-gray-700 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </label>
+      </div>
+      <div class="border-t border-gray-200 pt-4">
+        <!-- Example cart items -->
+        <div class="flex justify-between mb-2 gap-4">
+          <div class="w-[80px] h-[80px] rounded-1">
+            <img src="/assets/images/laptop-1.webp" class="w-full h-full object-cover" alt="laptop">
+          </div>
+          <div class="flex gap-4 items-center">
+            <div class="product-name self-center">MSI Thin A15 B7VE Ryzen 7 7735HS FHD Gaming Laptop</div>
+            <div class="shrink-0 flex flex-col justify-between items-end gap-[18px]">
+              <button><svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 stroke-red-500 hover:stroke-[#DC143C] transition-colors duration-300"
+                  viewBox="0 0 118 118" fill="none">
+                  <path
+                    d="M95.875 27.0417L93.8995 59.0305M22.125 27.0417L25.0977 76.3303C25.859 88.9533 26.2397 95.2649 29.3952 99.8034C30.9553 102.047 32.9653 103.942 35.297 105.365C38.5976 107.38 42.682 107.985 49.1667 108.167"
+                    stroke-width="8.5" stroke-linecap="round" />
+                  <path d="M98.3334 73.75L63.9167 108.164M98.3334 108.167L63.9167 73.7525" stroke-width="8.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14.75 27.0416H103.25M78.9405 27.0416L75.5844 20.1177C73.3547 15.5183 72.2396 13.2185 70.3167 11.7843C69.8904 11.4661 69.4386 11.1831 68.9661 10.9381C66.8367 9.83331 64.281 9.83331 59.1696 9.83331C53.9299 9.83331 51.3103 9.83331 49.1454 10.9844C48.6657 11.2395 48.2078 11.534 47.7767 11.8647C45.8314 13.3571 44.7448 15.7409 42.5715 20.5087L39.5935 27.0416"
+                    stroke-width="8.5" stroke-linecap="round" />
+                </svg></button>
+              <div class="">$1009.99</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between font-bold mt-4 pt-4 border-t">
+          <span>Total</span>
+          <span>$49.98</span>
+        </div>
+      </div>
+      <button class="w-full mt-auto bg-[#006BDE] hover:bg-[#005BEE] text-white font-bold py-2 px-4 rounded">
+        Checkout
+      </button>
+    </div>
+  </aside>
 
   <!-- Header -->
   <header class="site-header border-b border-slate-200">
 
     <!-- Top Bar -->
     <div class="header-top hidden xl:block border-b border-slate-200">
-      <div class="header-top__container mx-auto max-w-[1440px] px-6">
-        <div class="header-top__inner flex items-center justify-between py-3">
+      <div class="custom-container">
+        <div class="header-top__inner flex justify-between">
 
           <!-- Social -->
-          <div class="header-top__social flex items-center divide-x divide-slate-300">
-            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+          <div class="header-top__social flex items-center ">
+            <a href="#"
+              class="header-top__social__social-link p-3 text-slate-500 hover:text-sky-600 transition border-x border-[#D6D6D6]"
               aria-label="Facebook">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M13 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z" />
               </svg>
             </a>
-            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+            <a href="#" class="header-top__social-link p-3 text-slate-500 hover:text-sky-600 transition"
               aria-label="Twitter">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M22 5.8c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.2 1.7-2.1-.8.5-1.7.8-2.6 1-1.5-1.6-4.1-1.7-5.7-.2-1 1-1.4 2.4-1 3.7-3.3-.2-6.3-1.8-8.3-4.3-1.1 1.9-.5 4.3 1.3 5.5-.6 0-1.2-.2-1.7-.5 0 2 1.4 3.8 3.4 4.2-.6.2-1.2.2-1.8.1.5 1.7 2.1 2.9 4 2.9A8.3 8.3 0 0 1 2 18.4 11.7 11.7 0 0 0 8.3 20c7.5 0 11.8-6.4 11.5-12.1.8-.5 1.5-1.2 2.1-2.1z" />
               </svg>
             </a>
-            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+            <a href="#"
+              class="header-top__social-link p-3 text-slate-500 hover:text-sky-600 transition border-x border-[#D6D6D6]"
               aria-label="Instagram">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                 <rect x="3" y="3" width="18" height="18" rx="5"></rect>
@@ -48,14 +103,15 @@
                 <circle cx="17.5" cy="6.5" r="1"></circle>
               </svg>
             </a>
-            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+            <a href="#" class="header-top__social-link p-3 text-slate-500 hover:text-sky-600 transition"
               aria-label="YouTube">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M23 12s0-3.5-.4-5.1c-.2-.9-.9-1.6-1.8-1.8C19.2 4.7 12 4.7 12 4.7s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.5 1 12 1 12s0 3.5.4 5.1c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-5.1.4-5.1zM10 15.5v-7l6 3.5-6 3.5z" />
               </svg>
             </a>
-            <a href="#" class="header-top__social-link px-3 text-slate-500 hover:text-sky-600 transition"
+            <a href="#"
+              class="header-top__social-link p-3 text-slate-500 hover:text-sky-600 transition border-x border-[#D6D6D6]"
               aria-label="Pinterest">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -66,12 +122,12 @@
 
           <!-- Top Menu -->
           <nav class="header-top__nav" aria-label="Top navigation">
-            <ul class="header-top__menu flex items-center gap-6 text-sm text-slate-500">
-              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">About</a></li>
-              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">Services</a></li>
-              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">Brands</a></li>
-              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">Blog</a></li>
-              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition">FAQs</a></li>
+            <ul class="header-top__nav__menu flex items-center text-sm text-slate-500 h-full">
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition p-3">About</a></li>
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition p-3">Services</a></li>
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition p-3">Brands</a></li>
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition p-3">Blog</a></li>
+              <li><a href="#" class="header-top__menu-link hover:text-sky-600 transition p-3">FAQs</a></li>
             </ul>
           </nav>
 
@@ -81,21 +137,27 @@
 
     <!-- Main Header -->
     <div class="header-main">
-      <div class="header-main__container mx-auto max-w-[1440px] px-4 sm:px-6">
+      <div class="custom-container">
         <div class="header-main__inner flex flex-col gap-5 py-5 lg:flex-row lg:items-center lg:justify-between">
 
           <!-- Logo -->
           <a href="#" class="header-main__brand flex items-center gap-3">
-            <span
-              class="header-main__brand-icon flex h-11 w-11 items-center justify-center rounded-xl bg-sky-600 text-white shadow-sm">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 4h7v3h-7v-3z" />
-              </svg>
-            </span>
-            <div class="header-main__brand-text">
-              <span class="block text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">ELECTRONIC</span>
-              <span class="block text-xs uppercase tracking-[0.18em] text-slate-500">Smart Tech Store</span>
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="246" height="26" viewBox="0 0 246 26" fill="none">
+              <g clip-path="url(#clip0_202_1074)">
+                <path d="M14.3249 25.2279H18.9444V13.6614L14.3249 9.74683V25.2279Z" fill="#2E2E2E" />
+                <path
+                  d="M36.8408 0.400391V25.2279H32.2199V10.6238L29.2401 13.2385L25.8832 16.4533L12.2425 5.13093H9.29555V25.2279H4.67461V5.13093H0V0.516532H13.912L25.6492 10.2575L32.2199 4.48917L36.8408 0.400391Z"
+                  fill="#006BDE" />
+              </g>
+              <path
+                d="M40.4783 25V1.57866H56.2602V5.66138H45.4301V11.2422H55.4483V15.325H45.4301V20.9173H56.306V25H40.4783ZM60.2776 25V1.57866H65.2295V20.9173H75.2705V25H60.2776ZM78.6303 25V1.57866H94.4123V5.66138H83.5822V11.2422H93.6003V15.325H83.5822V20.9173H94.4581V25H78.6303ZM119.095 9.77841H114.086C113.994 9.13036 113.808 8.55474 113.526 8.05155C113.243 7.54073 112.881 7.10615 112.439 6.74782C111.997 6.38949 111.486 6.11502 110.907 5.92441C110.335 5.73381 109.713 5.63851 109.043 5.63851C107.83 5.63851 106.774 5.93966 105.875 6.54197C104.975 7.13665 104.277 8.0058 103.782 9.14942C103.286 10.2854 103.039 11.6654 103.039 13.2893C103.039 14.959 103.286 16.3619 103.782 17.4979C104.285 18.6338 104.986 19.4916 105.886 20.071C106.786 20.6504 107.826 20.9401 109.008 20.9401C109.672 20.9401 110.285 20.8525 110.849 20.6771C111.421 20.5018 111.928 20.2464 112.37 19.9109C112.813 19.5678 113.179 19.1523 113.468 18.6643C113.766 18.1764 113.972 17.6198 114.086 16.9947L119.095 17.0175C118.965 18.0925 118.641 19.1294 118.123 20.1282C117.612 21.1193 116.922 22.0075 116.053 22.7928C115.191 23.5705 114.162 24.188 112.965 24.6455C111.776 25.0953 110.43 25.3202 108.928 25.3202C106.839 25.3202 104.971 24.8475 103.324 23.9021C101.685 22.9567 100.389 21.5882 99.4361 19.7965C98.4907 18.0049 98.018 15.8358 98.018 13.2893C98.018 10.7352 98.4984 8.56237 99.459 6.77069C100.42 4.97902 101.723 3.6143 103.37 2.67653C105.017 1.73114 106.87 1.25844 108.928 1.25844C110.285 1.25844 111.543 1.44905 112.702 1.83025C113.869 2.21146 114.902 2.76802 115.801 3.49994C116.701 4.22423 117.433 5.11244 117.997 6.16457C118.569 7.2167 118.935 8.42132 119.095 9.77841ZM121.834 5.66138V1.57866H141.07V5.66138H133.9V25H129.005V5.66138H121.834ZM144.318 25V1.57866H153.559C155.328 1.57866 156.837 1.89506 158.088 2.52786C159.346 3.15304 160.302 4.04125 160.958 5.1925C161.621 6.33612 161.953 7.68178 161.953 9.22948C161.953 10.7848 161.618 12.1228 160.947 13.2436C160.276 14.3567 159.304 15.2106 158.03 15.8053C156.765 16.4 155.232 16.6973 153.433 16.6973H147.246V12.7175H152.633C153.578 12.7175 154.363 12.5879 154.988 12.3287C155.614 12.0695 156.079 11.6806 156.384 11.1622C156.696 10.6438 156.852 9.99951 156.852 9.22948C156.852 8.45181 156.696 7.79614 156.384 7.26245C156.079 6.72876 155.61 6.32468 154.977 6.05021C154.352 5.76812 153.563 5.62707 152.61 5.62707H149.27V25H144.318ZM156.967 14.3415L162.788 25H157.321L151.626 14.3415H156.967ZM187.056 13.2893C187.056 15.8434 186.572 18.0163 185.604 19.808C184.643 21.5996 183.332 22.9682 181.67 23.9136C180.015 24.8513 178.155 25.3202 176.089 25.3202C174.007 25.3202 172.139 24.8475 170.485 23.9021C168.83 22.9567 167.523 21.5882 166.562 19.7965C165.602 18.0049 165.121 15.8358 165.121 13.2893C165.121 10.7352 165.602 8.56237 166.562 6.77069C167.523 4.97902 168.83 3.6143 170.485 2.67653C172.139 1.73114 174.007 1.25844 176.089 1.25844C178.155 1.25844 180.015 1.73114 181.67 2.67653C183.332 3.6143 184.643 4.97902 185.604 6.77069C186.572 8.56237 187.056 10.7352 187.056 13.2893ZM182.035 13.2893C182.035 11.6349 181.788 10.2397 181.292 9.10368C180.804 7.96768 180.114 7.10616 179.222 6.5191C178.33 5.93204 177.286 5.63851 176.089 5.63851C174.892 5.63851 173.847 5.93204 172.955 6.5191C172.063 7.10616 171.369 7.96768 170.874 9.10368C170.386 10.2397 170.142 11.6349 170.142 13.2893C170.142 14.9438 170.386 16.339 170.874 17.475C171.369 18.611 172.063 19.4725 172.955 20.0596C173.847 20.6466 174.892 20.9401 176.089 20.9401C177.286 20.9401 178.33 20.6466 179.222 20.0596C180.114 19.4725 180.804 18.611 181.292 17.475C181.788 16.339 182.035 14.9438 182.035 13.2893ZM210.395 1.57866V25H206.118L195.928 10.2587H195.757V25H190.805V1.57866H195.15L205.26 16.3085H205.466V1.57866H210.395ZM219.519 1.57866V25H214.567V1.57866H219.519ZM244.338 9.77841H239.329C239.238 9.13036 239.051 8.55474 238.769 8.05155C238.487 7.54073 238.125 7.10615 237.683 6.74782C237.24 6.38949 236.73 6.11502 236.15 5.92441C235.578 5.73381 234.957 5.63851 234.286 5.63851C233.074 5.63851 232.018 5.93966 231.118 6.54197C230.219 7.13665 229.521 8.0058 229.025 9.14942C228.53 10.2854 228.282 11.6654 228.282 13.2893C228.282 14.959 228.53 16.3619 229.025 17.4979C229.529 18.6338 230.23 19.4916 231.13 20.071C232.029 20.6504 233.07 20.9401 234.252 20.9401C234.915 20.9401 235.529 20.8525 236.093 20.6771C236.665 20.5018 237.172 20.2464 237.614 19.9109C238.056 19.5678 238.422 19.1523 238.712 18.6643C239.009 18.1764 239.215 17.6198 239.329 16.9947L244.338 17.0175C244.209 18.0925 243.885 19.1294 243.366 20.1282C242.856 21.1193 242.166 22.0075 241.296 22.7928C240.435 23.5705 239.406 24.188 238.209 24.6455C237.019 25.0953 235.674 25.3202 234.172 25.3202C232.083 25.3202 230.215 24.8475 228.568 23.9021C226.929 22.9567 225.633 21.5882 224.68 19.7965C223.734 18.0049 223.261 15.8358 223.261 13.2893C223.261 10.7352 223.742 8.56237 224.702 6.77069C225.663 4.97902 226.967 3.6143 228.614 2.67653C230.26 1.73114 232.113 1.25844 234.172 1.25844C235.529 1.25844 236.787 1.44905 237.946 1.83025C239.112 2.21146 240.145 2.76802 241.045 3.49994C241.944 4.22423 242.676 5.11244 243.241 6.16457C243.812 7.2167 244.178 8.42132 244.338 9.77841Z"
+                fill="#2E2E2E" />
+              <defs>
+                <clipPath id="clip0_202_1074">
+                  <rect width="36.8408" height="24.8275" fill="white" transform="translate(0 0.400391)" />
+                </clipPath>
+              </defs>
+            </svg>
           </a>
 
           <!-- Search -->
@@ -118,25 +180,135 @@
           <!-- Actions -->
           <div class="header-main__actions flex flex-wrap items-center gap-4 sm:gap-6">
 
-            <!-- Selectors -->
-            <div class="header-main__selectors hidden md:flex items-center gap-4 text-sm text-slate-500">
-              <button class="header-main__selector flex items-center gap-1 hover:text-sky-600 transition">
-                <span>ENGLISH</span>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M5 7l5 5 5-5H5z" />
-                </svg>
-              </button>
-              <button class="header-main__selector flex items-center gap-1 hover:text-sky-600 transition">
-                <span>USD</span>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M5 7l5 5 5-5H5z" />
-                </svg>
-              </button>
-            </div>
+            <!-- Language and Currency Selectors -->
+            <ul class="header-main__selectors hidden md:flex items-center gap-4 text-sm text-slate-500">
+              <li class="group relative">
+                <button class="header-main__selector flex items-center gap-1 hover:text-sky-600 transition">
+                  <span>ENGLISH</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M5 7l5 5 5-5H5z" />
+                  </svg>
+                </button>
+                <ul class="absolute hidden group-hover:block -mt-1 w-48 bg-white shadow-lg rounded-md p-2 z-10">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                      <span class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 513 342" fill="none">
+                          <g clip-path="url(#clip0_301_1579)">
+                            <path d="M0 -0.00195312H513V341.998H0V-0.00195312Z" fill="#2D6E41" />
+                            <path
+                              d="M218.902 286.167C282.415 286.167 333.902 234.68 333.902 171.167C333.902 107.654 282.415 56.167 218.902 56.167C155.389 56.167 103.902 107.654 103.902 171.167C103.902 234.68 155.389 286.167 218.902 286.167Z"
+                              fill="#F40B32" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_301_1579">
+                              <rect width="513" height="342" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <span>
+                          Bangla
+                        </span>
+                      </span>
+                    </a>
+
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                      <span class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 513 342" fill="none">
+                          <g clip-path="url(#clip0_301_605)">
+                            <path d="M0 114H513V228H0V114Z" fill="white" />
+                            <path d="M0 0H513V114H0V0Z" fill="#CD1F2A" />
+                            <path d="M0 228H513V342H0V228Z" fill="#1D4185" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_301_605">
+                              <rect width="513" height="342" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <span>
+                          Dutch
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                      <span class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 513 342" fill="none">
+                          <g clip-path="url(#clip0_301_1200)">
+                            <path d="M0 0H513V342.004H0V0Z" fill="white" />
+                            <path
+                              d="M288.562 -0.00292969H224.438V138.934H0V203.059H224.438V341.996H288.562V203.059H513V138.934H288.562V-0.00292969Z"
+                              fill="#D80027" />
+                            <path
+                              d="M394.554 230.474L513 296.279V230.474H394.554ZM312.261 230.474L513 341.996V310.46L369.026 230.474H312.261ZM459.53 341.996L312.261 260.172V341.996H459.53Z"
+                              fill="#0052B4" />
+                            <path d="M312.261 230.474L513 341.996V310.46L369.026 230.474H312.261Z" fill="white" />
+                            <path d="M312.261 230.474L513 341.996V310.46L369.026 230.474H312.261Z" fill="#D80027" />
+                            <path
+                              d="M90.5174 230.472L0 280.76V230.472H90.5174ZM200.739 244.654V341.995H25.5408L200.739 244.654Z"
+                              fill="#0052B4" />
+                            <path d="M143.974 230.474L0 310.46V341.996L200.739 230.474H143.974Z" fill="#D80027" />
+                            <path
+                              d="M118.446 111.518L0 45.7142V111.518H118.446ZM200.739 111.518L0 -0.00292969V31.5325L143.974 111.518H200.739ZM53.4702 -0.00292969L200.739 81.8206V-0.00292969H53.4702Z"
+                              fill="#0052B4" />
+                            <path d="M200.739 111.518L0 -0.00292969V31.5325L143.974 111.518H200.739Z" fill="white" />
+                            <path d="M200.739 111.518L0 -0.00292969V31.5325L143.974 111.518H200.739Z" fill="#D80027" />
+                            <path
+                              d="M422.483 111.52L513 61.2324V111.52H422.483ZM312.261 97.3388V-0.00195312H487.459L312.261 97.3388Z"
+                              fill="#0052B4" />
+                            <path d="M369.026 111.518L513 31.5325V-0.00292969L312.261 111.518H369.026Z"
+                              fill="#D80027" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_301_1200">
+                              <rect width="513" height="342" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <span>
+                          English
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+
+                </ul>
+              </li>
+              <li class="group relative">
+                <button class="header-main__selector flex items-center gap-1 hover:text-sky-600 transition">
+                  <span>USD</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M5 7l5 5 5-5H5z" />
+                  </svg>
+                </button>
+                <ul class="absolute hidden group-hover:block -mt-1 w-36 bg-white shadow-lg rounded-md p-2 z-10">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                      &#2547; TK
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                      &euro; Dutch
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                      &#36; English
+                    </a>
+                  </li>
+
+                </ul>
+              </li>
+            </ul>
 
             <div class="hidden md:block h-6 w-px bg-slate-300"></div>
 
-            <!-- Icons -->
+            <!-- Icons Of Action -->
             <div class="header-main__icons flex items-center gap-2 sm:gap-3">
               <a href="#"
                 class="header-main__icon-btn flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
@@ -155,7 +327,7 @@
                 </svg>
               </a>
 
-              <a href="#"
+              <label for="cart-toggle"
                 class="header-main__icon-btn relative flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                 aria-label="Cart">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -165,7 +337,7 @@
                 </svg>
                 <span
                   class="header-main__cart-count absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-sky-600 text-[10px] font-semibold text-white">1</span>
-              </a>
+              </label>
             </div>
 
           </div>
@@ -175,22 +347,188 @@
 
     <!-- Navigation Bar -->
     <div class="header-nav bg-slate-900">
-      <div class="header-nav__container mx-auto max-w-[1440px] px-4 sm:px-6">
+      <div class="custom-container ">
         <div class="header-nav__inner flex items-center justify-between">
 
           <!-- Categories -->
-          <button
-            class="header-nav__categories hidden lg:flex min-w-[280px] items-center justify-between bg-sky-600 px-6 py-4 text-white hover:bg-sky-700 transition">
-            <span class="header-nav__categories-left flex items-center gap-3">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" />
+          <div class="header-nav__catagories group relative">
+            <button
+              class="hidden lg:flex min-w-[280px] items-center justify-between bg-sky-600 px-6 py-4 text-white hover:bg-sky-700 transition">
+              <span class=" flex items-center gap-3">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" />
+                </svg>
+                <span class="font-semibold">All Categories</span>
+              </span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5 7l5 5 5-5H5z" />
               </svg>
-              <span class="font-semibold">All Categories</span>
-            </span>
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M5 7l5 5 5-5H5z" />
-            </svg>
-          </button>
+            </button>
+            <ul
+              class="header-nav__categories__varticle-menu absolute hidden group-hover:block -mt-1 w-48 bg-white shadow-lg rounded-md p-2 z-10 w-full">
+              <li class="group/sub relative">
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                  <span class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 137 137" fill="none">
+                      <path
+                        d="M11.3994 28.4983C11.3994 22.2027 16.5031 17.099 22.7988 17.099H113.993C120.289 17.099 125.393 22.2027 125.393 28.4983V79.7954C125.393 86.091 120.289 91.1947 113.993 91.1947H22.7988C16.5031 91.1947 11.3994 86.091 11.3994 79.7954V28.4983Z"
+                        fill="#4562FE" />
+                      <path d="M62.6964 85.495H74.0958V108.294H62.6964V85.495Z" fill="#4562FE" />
+                      <path
+                        d="M39.8978 113.993C39.8978 110.846 42.4496 108.294 45.5974 108.294H91.1948C94.3426 108.294 96.8945 110.846 96.8945 113.993C96.8945 117.141 94.3426 119.693 91.1948 119.693H45.5974C42.4496 119.693 39.8978 117.141 39.8978 113.993Z"
+                        fill="#4562FE" />
+                    </svg>
+                    <span>
+                      Computers & Laptops
+                    </span>
+                  </span>
+                </a>
+                <ul
+                  class="header-nav__categories__mega-menu absolute left-full top-0 hidden group-hover/sub:flex bg-white shadow-lg rounded-md p-2 z-10 gap-6">
+                  <li>
+                    <a href="#"
+                      class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">Laptop</a>
+                    <ul>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Best Laptops
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Gaming Laptops
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          2-in-1 Laptops
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Notebook
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          MacBook
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          ChromeBook
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">Desktop</a>
+                    <ul>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Desktop PCs
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          All-in-One PCs
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Mini PCs
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Apple Mac mini
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">Monitor &
+                      Display</a>
+                    <ul>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Computer Monitors
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Gaming Monitors
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Curved Monitors
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Portable Monitors
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Touchscreen Monitors
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"
+                      class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">Accessories</a>
+                    <ul>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Laptop Bags
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Laptop Chargers
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Cooling Pads
+                        </a>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Keyboards
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Mouse
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Mouse pads
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Webcams
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                          Hubs
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">Mobile &
+                  Accessories</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">Wearable
+                  Technology</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Printers, Scanners & Office
+                  Electronics</a>
+              </li>
+            </ul>
+          </div>
 
           <!-- Desktop Menu -->
           <nav class="header-nav__menu hidden lg:block flex-1" aria-label="Primary navigation">
@@ -200,8 +538,10 @@
                   <a href="#"
                     class="header-nav__link block px-6 py-4 font-medium hover:text-sky-400 transition">Home</a>
                   <div class="absolute hidden group-hover:block mt-1 w-48 bg-white shadow-lg rounded-md p-2 z-10">
-                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Link 1</a>
-                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Link 2</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">Link
+                      1</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">Link
+                      2</a>
                     <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Link 3</a>
                   </div>
                 </div>
@@ -230,8 +570,9 @@
         </div>
       </div>
     </div>
-
   </header>
+  <main>
+  </main>
 
 </body>
 
