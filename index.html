@@ -15,14 +15,15 @@
 <body class="bg-white text-slate-800">
 
   <!-- Hidden checkbox – this is the state keeper -->
-  <input type="checkbox" id="cart-toggle" class="hidden peer" />
+  <input type="checkbox" id="cart-toggle" class="hidden peer/cart" />
+  <input type="checkbox" id="mobile-menu-toggle" class="hidden peer/menu" />
   <!-- Backdrop (also a label for the checkbox – clicking it closes the drawer) -->
   <label for="cart-toggle"
-    class="fixed inset-0 bg-black bg-opacity-50 z-40 cursor-pointer transition-opacity peer-checked:opacity-100 opacity-0 pointer-events-none peer-checked:pointer-events-auto"></label>
+    class="fixed inset-0 bg-black bg-opacity-50 z-40 cursor-pointer transition-opacity peer-checked/cart:opacity-100 opacity-0 pointer-events-none peer/cart-checked:pointer-events-auto hidden peer-checked/cart:block"></label>
 
   <!-- Off-Canvas Cart Drawer -->
   <aside
-    class="fixed top-0 right-0 h-full w-[450px] bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out translate-x-full peer-checked:translate-x-0">
+    class="fixed top-0 right-0 h-full w-[450px] bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out translate-x-full peer-checked/cart:translate-x-0">
     <div class="p-6 flex flex-col gap-4 h-full">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-xl font-bold">Your Cart</h2>
@@ -69,6 +70,178 @@
       </button>
     </div>
   </aside>
+
+  <!-- Off-Canvas mobile-menu Drawer -->
+  <label for="mobile-menu-toggle" id="mobile-backdrop"
+    class="fixed inset-0 bg-black/50 transition-opacity opacity-0 duration-300 peer-checked/menu:opacity-100 hidden peer-checked/menu:block"></label>
+
+  <aside id="mobile-panel"
+    class="fixed top-0 left-0 bottom-0 z-50 w-80 max-w-[80vw] bg-white transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto shadow-xl peer-checked/menu:translate-x-0">
+
+    <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200 bg-[#2E2E2E] text-white">
+      <span class="font-bold text-lg text-white">Menu</span>
+      <label for="mobile-menu-toggle" id="close-mobile-menu" class="p-1 hover:text-gray-200 transition"
+        aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </label>
+    </div>
+    <ul class="header-main__selectors flex md:hidden items-center justify-center gap-4 text-sm text-slate-500 p-3">
+      <li class="group relative">
+        <button class="header-main__selector flex items-center gap-1 hover:text-sky-600 transition">
+          <span>ENGLISH</span>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M5 7l5 5 5-5H5z" />
+          </svg>
+        </button>
+        <ul class="absolute hidden group-hover:block -mt-1 w-48 bg-white shadow-lg rounded-md p-2 z-10">
+          <li>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+              <span class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 513 342" fill="none">
+                  <g clip-path="url(#clip0_301_1579)">
+                    <path d="M0 -0.00195312H513V341.998H0V-0.00195312Z" fill="#2D6E41" />
+                    <path
+                      d="M218.902 286.167C282.415 286.167 333.902 234.68 333.902 171.167C333.902 107.654 282.415 56.167 218.902 56.167C155.389 56.167 103.902 107.654 103.902 171.167C103.902 234.68 155.389 286.167 218.902 286.167Z"
+                      fill="#F40B32" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_301_1579">
+                      <rect width="513" height="342" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span>
+                  Bangla
+                </span>
+              </span>
+            </a>
+
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+              <span class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 513 342" fill="none">
+                  <g clip-path="url(#clip0_301_605)">
+                    <path d="M0 114H513V228H0V114Z" fill="white" />
+                    <path d="M0 0H513V114H0V0Z" fill="#CD1F2A" />
+                    <path d="M0 228H513V342H0V228Z" fill="#1D4185" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_301_605">
+                      <rect width="513" height="342" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span>
+                  Dutch
+                </span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+              <span class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 513 342" fill="none">
+                  <g clip-path="url(#clip0_301_1200)">
+                    <path d="M0 0H513V342.004H0V0Z" fill="white" />
+                    <path
+                      d="M288.562 -0.00292969H224.438V138.934H0V203.059H224.438V341.996H288.562V203.059H513V138.934H288.562V-0.00292969Z"
+                      fill="#D80027" />
+                    <path
+                      d="M394.554 230.474L513 296.279V230.474H394.554ZM312.261 230.474L513 341.996V310.46L369.026 230.474H312.261ZM459.53 341.996L312.261 260.172V341.996H459.53Z"
+                      fill="#0052B4" />
+                    <path d="M312.261 230.474L513 341.996V310.46L369.026 230.474H312.261Z" fill="white" />
+                    <path d="M312.261 230.474L513 341.996V310.46L369.026 230.474H312.261Z" fill="#D80027" />
+                    <path
+                      d="M90.5174 230.472L0 280.76V230.472H90.5174ZM200.739 244.654V341.995H25.5408L200.739 244.654Z"
+                      fill="#0052B4" />
+                    <path d="M143.974 230.474L0 310.46V341.996L200.739 230.474H143.974Z" fill="#D80027" />
+                    <path
+                      d="M118.446 111.518L0 45.7142V111.518H118.446ZM200.739 111.518L0 -0.00292969V31.5325L143.974 111.518H200.739ZM53.4702 -0.00292969L200.739 81.8206V-0.00292969H53.4702Z"
+                      fill="#0052B4" />
+                    <path d="M200.739 111.518L0 -0.00292969V31.5325L143.974 111.518H200.739Z" fill="white" />
+                    <path d="M200.739 111.518L0 -0.00292969V31.5325L143.974 111.518H200.739Z" fill="#D80027" />
+                    <path
+                      d="M422.483 111.52L513 61.2324V111.52H422.483ZM312.261 97.3388V-0.00195312H487.459L312.261 97.3388Z"
+                      fill="#0052B4" />
+                    <path d="M369.026 111.518L513 31.5325V-0.00292969L312.261 111.518H369.026Z" fill="#D80027" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_301_1200">
+                      <rect width="513" height="342" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span>
+                  English
+                </span>
+              </span>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+      <li class="group relative">
+        <button class="header-main__selector flex items-center gap-1 hover:text-sky-600 transition">
+          <span>USD</span>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M5 7l5 5 5-5H5z" />
+          </svg>
+        </button>
+        <ul class="absolute hidden group-hover:block -mt-1 w-36 bg-white shadow-lg rounded-md p-2 z-10">
+          <li>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+              &#2547; TK
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+              &euro; Dutch
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+              &#36; English
+            </a>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+
+    <nav class="px-6 py-4">
+      <ul class="space-y-4">
+        <li><a href="#" class="block text-gray-800 font-medium hover:text-[#006BDE]">Home</a></li>
+        <li><a href="#" class="block text-gray-800 font-medium hover:text-[#006BDE]">Features</a></li>
+        <li><a href="#" class="block text-gray-800 font-medium hover:text-[#006BDE]">Shop</a></li>
+        <li><a href="#" class="block text-gray-800 font-medium hover:text-[#006BDE]">Blog</a></li>
+        <li><a href="#" class="block text-gray-800 font-medium hover:text-[#006BDE]">Product</a></li>
+        <li><a href="#" class="block text-gray-800 font-medium hover:text-[#006BDE]">Pages</a></li>
+
+        <li class="pt-4 pb-2">
+          <hr class="border-gray-200">
+        </li>
+
+        <li>
+          <span class="block text-gray-900 font-bold mb-3 flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#006BDE]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" />
+            </svg>
+            Categories
+          </span>
+          <ul class="pl-4 space-y-3">
+            <li><a href="#" class="block text-gray-600 text-sm hover:text-[#006BDE]">Computers & Laptops</a></li>
+            <li><a href="#" class="block text-gray-600 text-sm hover:text-[#006BDE]">Mobile & Accessories</a></li>
+            <li><a href="#" class="block text-gray-600 text-sm hover:text-[#006BDE]">Wearable Technology</a></li>
+            <li><a href="#" class="block text-gray-600 text-sm hover:text-[#006BDE]">Printers & Office</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
 
   <!-- Header -->
   <header class="site-header border-b border-slate-200">
@@ -138,7 +311,7 @@
     <!-- Main Header -->
     <div class="header-main">
       <div class="custom-container">
-        <div class="header-main__inner flex flex-col gap-5 py-5 lg:flex-row lg:items-center lg:justify-between">
+        <div class="header-main__inner flex gap-5 py-5 flex-row lg:items-center justify-between">
 
           <!-- Logo -->
           <a href="#" class="header-main__brand flex items-center gap-3">
@@ -346,7 +519,7 @@
     </div>
 
     <!-- Navigation Bar -->
-    <div class="header-nav bg-slate-900">
+    <div class="header-nav bg-[#2E2E2E]">
       <div class="custom-container ">
         <div class="header-nav__inner flex items-center justify-between">
 
@@ -550,12 +723,13 @@
           </nav>
 
           <!-- Mobile Menu Button -->
-          <button class="header-nav__mobile-toggle lg:hidden flex h-12 w-12 items-center justify-center text-white"
+          <label for="mobile-menu-toggle"
+            class="header-nav__mobile-toggle lg:hidden flex h-12 w-12 items-center justify-center text-white"
             aria-label="Open menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path d="M4 7h16M4 12h16M4 17h16"></path>
             </svg>
-          </button>
+          </label>
 
         </div>
       </div>

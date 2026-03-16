@@ -20,11 +20,14 @@
   overflow-y: auto;
 }
 
+.header-main__inner {
+  flex-wrap: nowrap;
+}
+
 @media (width < 1440px) {
   .custom-container{
     --container-max-width : 1140px;
-  }
-  
+  }  
 }
 @media (width < 1200px) {
   .custom-container{
@@ -35,6 +38,12 @@
 @media (width < 992px) {
   .custom-container{
     --container-max-width : 720px;
+  }
+    .header-main__inner{
+      flex-wrap: wrap;
+    }
+  .header-main__search{
+    order: 3;
   }
   
 }
