@@ -1,0 +1,26 @@
+{
+  "name": "tmelectronics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buils": "npx @tailwindcss/cli -i ./assets/css/style.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shahriar-Syeed/tmelectronics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Shahriar-Syeed/tmelectronics/issues"
+  },
+  "homepage": "https://github.com/Shahriar-Syeed/tmelectronics#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "tailwindcss": "^4.2.1"
+  }
+}
