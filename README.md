@@ -5,3 +5,7 @@ This project is a web-based electronic e-commerce system designed to make shoppi
 ## Technology
 
 HTML, Tailwind.
+
+## Features
+
+Mega menu, Responsive.
