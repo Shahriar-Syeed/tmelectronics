@@ -42,16 +42,15 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --breakpoint-2xl: 1400px;
+  --breakpoint-2xl: 1440px;
 
 }
 
 :root {
   --vertical-menu-width: 280px;
-  --container-max-width: 1440px;
+  --container-max-width: 100%;
   --container-inline-padding: 12px;
 }
-
 
 
 .custom-container {
@@ -66,41 +65,45 @@
   flex-wrap: nowrap;
 }
 
-@media (width < 1440px) {
-  .custom-container {
-    --container-max-width: 1140px;
-  }
-}
-
-@media (width < 1200px) {
-  .custom-container {
-    --container-max-width: 960px;
-  }
-}
-
-@media (width < 992px) {
-  .custom-container {
-    --container-max-width: 720px;
-  }
-
-  .header-main__inner {
-    flex-wrap: wrap;
-  }
-
-  .header-main__search {
-    order: 3;
-  }
-}
-
-@media (width < 768px) {
+@media (width >=576px) {
   .custom-container {
     --container-max-width: 540px;
   }
 }
 
-@media (width < 576px) {
+/* >= 768px */
+@media (width >=768px) {
   .custom-container {
-    --container-max-width: 100%;
+    --container-max-width: 720px;
+  }
+}
+
+/* >= 992px */
+@media (width >=992px) {
+  .custom-container {
+    --container-max-width: 960px;
+  }
+
+  .header-main__inner {
+    flex-wrap: nowrap;
+  }
+
+  .header-main__search {
+    order: initial;
+  }
+}
+
+/* >= 1200px */
+@media (width >=1200px) {
+  .custom-container {
+    --container-max-width: 1140px;
+  }
+}
+
+/* >= 1440px */
+@media (width >=1440px) {
+  .custom-container {
+    --container-max-width: 1400px;
   }
 }
 
@@ -555,12 +558,12 @@
   }
 
   .hero__inner {
-    @apply flex items-center justify-between gap-8 min-h-[300px];
+    @apply flex items-center justify-between xl:gap-8 min-h-[300px] 2xl:ml-[56px] 2xl:mr-[132px] xl:ml-[40px] xl:mr-[90px] lg:ml-[30px] lg:mr-[70px] md:ml-[20px] md:mr-[30px] sm:ml-[10px] sm:mr-[10px] ml-0 mr-0;
   }
 
   .hero__content {
-    @apply flex flex-col items-center justify-center gap-[30px] xl:ml-[3.959%] ml-[2.5%];
-    padding-left: 3.959%;
+    @apply flex flex-col justify-center xl:gap-[30px] lg:gap-[20px] gap-[10px] w-full;
+
   }
 
   .hero__title-wrap {
@@ -573,15 +576,23 @@
 
   .hero__title-main {
     clip-path: polygon(99.854% 75.966%, 99.7% 41.662%, 99.7% 41.662%, 99.684% 39.649%, 99.654% 37.656%, 99.61% 35.686%, 99.552% 33.74%, 99.481% 31.82%, 99.397% 29.93%, 99.299% 28.071%, 99.188% 26.245%, 99.065% 24.455%, 98.929% 22.702%, 98.929% 22.702%, 98.873% 22.037%, 98.815% 21.379%, 98.755% 20.728%, 98.694% 20.085%, 98.631% 19.448%, 98.566% 18.818%, 98.499% 18.195%, 98.43% 17.578%, 98.36% 16.968%, 98.288% 16.365%, 98.288% 16.365%, 98.227% 15.872%, 98.165% 15.385%, 98.102% 14.904%, 98.037% 14.428%, 97.972% 13.957%, 97.905% 13.493%, 97.837% 13.034%, 97.768% 12.582%, 97.698% 12.135%, 97.627% 11.695%, 97.627% 11.695%, 97.23% 9.447%, 96.811% 7.427%, 96.372% 5.639%, 95.914% 4.087%, 95.44% 2.777%, 94.952% 1.713%, 94.452% 0.901%, 93.941% 0.345%, 93.421% 0.05%, 92.894% 0.021%, 68.393% 4.673%, 67.833% 4.778%, 66.515% 5.024%, 65.955% 5.129%, 64.634% 5.375%, 64.074% 5.48%, 62.754% 5.726%, 62.194% 5.831%, 60.873% 6.077%, 60.313% 6.183%, 58.995% 6.428%, 58.435% 6.534%, 57.117% 6.779%, 56.557% 6.885%, 55.239% 7.131%, 54.679% 7.236%, 54.503% 7.271%, 53.997% 7.359%, 53.361% 7.482%, 52.801% 7.587%, 51.483% 7.833%, 50.923% 7.938%, 49.602% 8.184%, 49.042% 8.289%, 49.039% 8.289%, 47.721% 8.535%, 47.161% 8.64%, 45.843% 8.886%, 45.283% 8.991%, 43.965% 9.237%, 43.963% 9.237%, 43.402% 9.343%, 42.082% 9.588%, 41.511% 9.781%, 40.193% 10.027%, 39.633% 10.133%, 38.315% 10.378%, 37.755% 10.484%, 14.233% 14.96%, 14.231% 14.96%, 13.949% 15.013%, 13.205% 15.153%, 12.888% 15.224%, 12.144% 15.364%, 11.827% 15.417%, 11.083% 15.557%, 11.081% 15.557%, 10.767% 15.627%, 10.023% 15.768%, 9.706% 15.821%, 8.962% 15.979%, 8.648% 16.031%, 7.904% 16.172%, 7.587% 16.242%, 6.843% 16.382%, 6.529% 16.435%, 5.785% 16.575%, 5.777% 16.593%, 5.468% 16.646%, 4.724% 16.786%, 4.41% 16.839%, 3.666% 16.997%, 3.349% 17.049%, 2.762% 17.155%, 2.762% 17.155%, 2.746% 17.16%, 2.73% 17.165%, 2.714% 17.171%, 2.698% 17.176%, 2.683% 17.181%, 2.667% 17.186%, 2.651% 17.192%, 2.636% 17.197%, 2.621% 17.202%, 2.605% 17.207%, 2.605% 17.207%, 2.573% 17.23%, 2.54% 17.254%, 2.508% 17.28%, 2.475% 17.309%, 2.443% 17.339%, 2.41% 17.372%, 2.378% 17.407%, 2.345% 17.443%, 2.313% 17.482%, 2.28% 17.523%, 2.28% 17.523%, 2.197% 17.641%, 2.115% 17.774%, 2.033% 17.922%, 1.953% 18.085%, 1.873% 18.263%, 1.794% 18.456%, 1.716% 18.665%, 1.639% 18.889%, 1.563% 19.129%, 1.487% 19.384%, 1.487% 19.384%, 1.45% 19.518%, 1.413% 19.654%, 1.377% 19.794%, 1.341% 19.937%, 1.305% 20.084%, 1.269% 20.235%, 1.234% 20.389%, 1.199% 20.548%, 1.165% 20.71%, 1.13% 20.877%, 1.13% 20.877%, 1.092% 21.063%, 1.055% 21.254%, 1.018% 21.449%, 0.982% 21.648%, 0.946% 21.851%, 0.91% 22.058%, 0.875% 22.27%, 0.841% 22.486%, 0.807% 22.706%, 0.773% 22.931%, 0.773% 22.931%, 0.684% 23.547%, 0.6% 24.185%, 0.523% 24.842%, 0.451% 25.519%, 0.385% 26.214%, 0.325% 26.925%, 0.27% 27.652%, 0.22% 28.394%, 0.176% 29.149%, 0.137% 29.918%, 0.137% 29.918%, 0.137% 29.923%, 0.137% 29.926%, 0.137% 29.93%, 0.136% 29.933%, 0.136% 29.935%, 0.135% 29.938%, 0.135% 29.941%, 0.135% 29.944%, 0.134% 29.948%, 0.134% 29.953%, 0.134% 29.953%, 0.115% 30.386%, 0.097% 30.821%, 0.081% 31.258%, 0.066% 31.698%, 0.053% 32.141%, 0.041% 32.586%, 0.031% 33.034%, 0.023% 33.484%, 0.016% 33.938%, 0.01% 34.394%, 0.01% 34.412%, 0.01% 34.412%, 0.001% 35.728%, 0.003% 37.052%, 0.016% 38.378%, 0.041% 39.703%, 0.076% 41.022%, 0.12% 42.33%, 0.174% 43.623%, 0.237% 44.896%, 0.309% 46.146%, 0.389% 47.368%, 0.389% 47.368%, 0.409% 47.652%, 0.429% 47.934%, 0.449% 48.215%, 0.471% 48.495%, 0.492% 48.772%, 0.514% 49.048%, 0.537% 49.321%, 0.56% 49.591%, 0.584% 49.859%, 0.608% 50.124%, 0.608% 50.124%, 0.61% 50.14%, 0.611% 50.156%, 0.612% 50.172%, 0.614% 50.187%, 0.615% 50.203%, 0.616% 50.219%, 0.617% 50.235%, 0.619% 50.251%, 0.62% 50.266%, 0.622% 50.282%, 0.622% 50.282%, 0.635% 50.434%, 0.649% 50.584%, 0.664% 50.732%, 0.678% 50.879%, 0.692% 51.024%, 0.707% 51.168%, 0.721% 51.312%, 0.736% 51.455%, 0.75% 51.597%, 0.765% 51.739%, 1.203% 55.953%, 1.45% 58.34%, 2.034% 63.958%, 2.28% 66.346%, 2.865% 71.963%, 3.111% 74.351%, 3.125% 74.491%, 3.125% 74.491%, 3.179% 75.011%, 3.235% 75.526%, 3.291% 76.036%, 3.349% 76.542%, 3.407% 77.043%, 3.466% 77.54%, 3.525% 78.032%, 3.586% 78.519%, 3.647% 79%, 3.709% 79.477%, 3.709% 79.477%, 3.734% 79.671%, 3.76% 79.865%, 3.785% 80.057%, 3.811% 80.249%, 3.837% 80.441%, 3.863% 80.631%, 3.889% 80.821%, 3.916% 81.011%, 3.942% 81.201%, 3.969% 81.391%, 3.969% 81.391%, 4.476% 84.648%, 5.02% 87.608%, 5.598% 90.26%, 6.206% 92.593%, 6.841% 94.597%, 7.5% 96.26%, 8.181% 97.573%, 8.879% 98.524%, 9.592% 99.102%, 10.317% 99.297%, 10.326% 99.297%, 24.054% 99.192%, 24.611% 99.192%, 25.924% 99.174%, 26.481% 99.157%, 27.794% 99.139%, 28.351% 99.139%, 29.663% 99.122%, 30.221% 99.104%, 31.533% 99.087%, 32.091% 99.087%, 33.403% 99.069%, 33.963% 99.052%, 35.276% 99.034%, 35.833% 99.034%, 37.146% 99.016%, 37.703% 98.999%, 39.016% 98.981%, 39.573% 98.981%, 39.86% 98.964%, 40.886% 98.964%, 41.443% 98.946%, 42.756% 98.929%, 43.313% 98.929%, 44.626% 98.911%, 45.183% 98.894%, 46.495% 98.876%, 47.053% 98.876%, 48.365% 98.858%, 48.923% 98.841%, 50.235% 98.823%, 50.793% 98.823%, 52.105% 98.806%, 52.665% 98.788%, 53.978% 98.771%, 54.259% 98.771%, 85.591% 98.543%, 87.209% 98.525%, 96.461% 98.455%, 96.461% 98.455%, 96.737% 98.379%, 97.008% 98.165%, 97.273% 97.815%, 97.532% 97.331%, 97.783% 96.717%, 98.026% 95.974%, 98.259% 95.104%, 98.482% 94.112%, 98.694% 92.998%, 98.894% 91.766%, 98.894% 91.766%, 99.079% 90.483%, 99.245% 89.115%, 99.392% 87.669%, 99.519% 86.151%, 99.627% 84.57%, 99.714% 82.933%, 99.781% 81.247%, 99.827% 79.519%, 99.852% 77.756%, 99.854% 75.966%);
-    @apply inline-flex items-center justify-center bg-white px-8 md:px-10 py-2 md:py-3 text-black text-[38px] md:text-[56px] leading-none font-black italic uppercase absolute z-[2] bottom-1.25 left-1.5;
+    @apply inline-flex items-center justify-center bg-white px-8 md:px-10 py-2 md:py-3 text-black text-[38px] 2xl:text-[56px] xl:text-[50px] lg:text-[46px] md:text-[42px] leading-none font-black italic uppercase absolute z-[2] bottom-1.25 left-1.5 aspect-[256/39];
+  }
+
+  .hero__title-main h1 {
+    @apply text-nowrap;
   }
 
   .hero__btn {
-    @apply inline-flex items-center justify-center rounded-[14.6px] bg-white px-7 py-3 text-black text-xl md:text-2xl font-bold uppercase transition hover:opacity-90 relative;
+    @apply inline-flex items-center justify-center rounded-[14.6px] bg-white px-7 py-3 text-black text-xl md:text-2xl font-bold uppercase transition hover:opacity-90 relative self-center;
+  }
+
+  .hero__image {
+    @apply 2xl:w-[69%] xl:w-[42.6%];
   }
 
   .hero__badge {
-    @apply shrink-0 rounded-full w-[190px] h-[190px] xl:w-[238px] xl:h-[238px] relative xl:mr-[9.32%] mr-[8%];
+    @apply shrink-0 rounded-full w-[190px] sm:w-[200px] md:w-[212px] lg:w-[208px] xl:w-[232px] 2xl:w-[238px] aspect-square relative;
     background: radial-gradient(circle,
         #0d67b5 0%,
         #0a5aa0 22%,
@@ -592,7 +603,7 @@
   }
 
   .hero__badge-inner {
-    @apply shrink-0 flex flex-col items-center justify-center rounded-full w-[173.1954px] h-[173.1954px] xl:w-[216.95px] xl:h-[216.95px] text-white text-center shadow-lg absolute right-1.5 top-1.5;
+    @apply shrink-0 flex flex-col items-center justify-center rounded-full w-[91.16%] aspect-square text-white text-center shadow-lg absolute right-1.5 top-1.5;
 
     box-shadow: inset 0 0 0 4px #FFFFFF;
 
@@ -605,15 +616,15 @@
   }
 
   .hero__badge-save {
-    @apply text-[20px] md:text-[28px] font-extrabold italic uppercase leading-none;
+    @apply text-[20px] text-[18px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] font-extrabold italic uppercase leading-none;
   }
 
   .hero__badge-upto {
-    @apply text-[26px] md:text-[42px] font-black italic uppercase leading-none;
+    @apply text-[22px] xs:text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[42px] font-black italic uppercase leading-none;
   }
 
   .hero__badge-offer {
-    @apply text-[42px] md:text-[64px] font-black italic leading-none;
+    @apply text-[42px] xs:text-[44px] sm:text-[48px] md:text-[52px] lg:text-[56px] xl:text-[60px] 2xl:text-[64px] font-black italic leading-none;
   }
 
   /* Responsive */
@@ -1235,26 +1246,27 @@
   }
 
   .latest-news__grid {
-    @apply grid grid-cols-1 gap-6 lg:grid-cols-[1.08fr_1fr];
+    @apply grid grid-cols-1 gap-6 xl:grid-cols-[1.08fr_1fr];
   }
 
   .latest-news__side-list {
-    @apply flex flex-col gap-6;
+    @apply flex flex-col lg:flex-row xl:flex-col gap-4;
   }
 
   .news-card--featured {
-    @apply relative overflow-hidden rounded-[5px];
+    @apply relative overflow-hidden rounded-[5px] md:min-h-[520px] sm:min-h-[480px] min-h-[380px] flex flex-col;
 
   }
 
   .news-card__image {
-    @apply block w-full object-contain;
-    aspect-ratio: 706 / 510;
+    @apply block object-contain;
+    /* aspect-ratio: 706 / 510; */
   }
 
   .news-card__overlay {
-    @apply absolute inset-0 z-[2];
+    @apply absolute inset-0 flex;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgb(0 0 0 / 0%) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 38.53%, rgba(0, 0, 0, 0.70) 63.75%);
+    align-items: flex-end;
 
   }
 
@@ -1264,20 +1276,20 @@
 
   .news-card__thumb {
     @apply block h-full w-full object-cover;
-    aspect-ratio: 254 / 202;
+    /* aspect-ratio: 254 / 202; */
   }
 
   .news-card--side {
-    @apply grid grid-cols-[1fr_1fr] gap-6;
+    @apply grid xs:grid-cols-[1fr_260px] gap-4 items-center p-0;
   }
 
   .news-card__content {
-    @apply flex flex-col px-8 pb-8;
+    @apply w-full flex flex-col px-2.5;
   }
 
-  /* .news-card__content--overlay {
-    @apply mt-5;
-  } */
+  .news-card__content--overlay {
+    @apply mt-5 lg:px-10 lg:pb-10 sm:px-8 sm:pb-8 px-2.5 pb-2.5;
+  }
 
   .news-card__meta {
     @apply flex flex-wrap items-center gap-3 text-[14px] text-[#8a8a8a];
@@ -1316,7 +1328,7 @@
   }
 
   .news-card__excerpt {
-    @apply mt-3 max-w-[360px] text-[15px] leading-[1.8] text-[#8a8a8a];
+    @apply mt-3 max-w-[360px] text-[15px] leading-[1.8] text-[#8a8a8a] line-clamp-2;
   }
 
   .news-card__link {
