@@ -396,7 +396,11 @@
   } */
 
   .header-main__search {
-    @apply w-full lg:max-w-2xl;
+    @apply w-full lg:max-w-2xl hidden lg:block;
+  }
+
+  .header-main__search.header-main__search--navigation {
+    @apply lg:hidden block w-3/4;
   }
 
   .header-main__search-box {
@@ -481,7 +485,7 @@
   }
 
   .header-nav__categories-button {
-    @apply hidden lg:flex min-w-[280px] items-center justify-between bg-primary px-6 py-4 text-white hover:bg-primary-70 transition;
+    @apply hidden lg:flex xl:min-w-[280px] lg:min-w-[210px] items-center justify-between bg-primary px-6 py-4 text-white hover:bg-primary-70 transition;
   }
 
   .header-nav__vertical-menu {

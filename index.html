@@ -805,6 +805,22 @@
             </ul>
           </nav>
 
+          <!-- Search -->
+          <form class="header-main__search header-main__search--navigation" role="search">
+            <label for="product-search" class="sr-only">Search products</label>
+            <div class="header-main__search-box">
+              <input id="product-search" type="search" placeholder="Search products..."
+                class="header-main__search-input" />
+              <button type="submit" class="header-main__search-btn" aria-label="Search">
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <path d="m20 20-3.5-3.5"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+
           <!-- Mobile Menu Button -->
           <label for="mobile-menu-toggle"
             class="header-nav__mobile-toggle lg:hidden flex h-12 w-12 items-center justify-center text-white"
