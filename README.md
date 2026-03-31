@@ -4,7 +4,7 @@ This project is a web-based electronic e-commerce system designed to make shoppi
 
 ## Technology
 
-HTML, Tailwind.
+HTML-5, Tailwind CSS, Swiper slider.
 
 ## Features
 
