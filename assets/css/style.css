@@ -962,11 +962,11 @@
   }
 
   .happy-clients__grid {
-    @apply grid grid-cols-1 items-center gap-10 lg:grid-cols-[420px_1fr] lg:gap-16;
+    @apply grid grid-cols-1 items-center gap-10 xl:grid-cols-[420px_1fr] lg:gap-16;
   }
 
   .happy-clients__intro {
-    @apply max-w-[430px];
+    @apply max-w-[430px] xl:block xl:text-left text-center flex flex-col items-center mx-auto;
   }
 
   .happy-clients__heading {
