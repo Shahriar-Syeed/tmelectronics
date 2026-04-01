@@ -4,13 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/lib.min.js"
-    integrity="sha512-LBqpfYKfymp3VEoHOQharES5j6UyXzUP0Td5jk5j1Ekm9tsbAoGUi5VaGA+0gdAlqKvAUb+7iFBe6qQQ7Jwk0Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+  <!-- favicon -->
+
+  <link rel="icon" type="image/png" href="./assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="./assets/images/favicon/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="./assets/images/favicon/site.webmanifest" />
+
+  <!-- Swiper slider style -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+  <!-- custom css -->
   <link rel="stylesheet" href="assets/css/output.css">
+
+
   <title>Electronic Store Header</title>
 </head>
 
@@ -538,7 +546,7 @@
                     Computers & Laptops
                   </span>
                 </a>
-                <ul class="header-nav__mega-menu hidden group-hover/sub:flex">
+                <ul class="header-nav__mega-menu--right hidden group-hover/sub:flex">
                   <li class="header-nav__mega-column">
                     <a href="#" class="header-nav__mega-title">Laptop</a>
                     <ul class="header-nav__mega-list">
@@ -730,8 +738,8 @@
           <!-- Desktop Menu -->
           <nav class="header-nav__menu" aria-label="Primary navigation">
             <ul class="header-nav__list">
-              <li class="header-nav__item">
-                <a href="#" class="header-nav__link">
+              <li class="header-nav__item header-nav__item--has-children group">
+                <a href="#" class="header-nav__link  ">
                   <span>
                     Home
                   </span>
@@ -741,6 +749,27 @@
                       d="M5.15771 8.16737C5.36799 7.94421 5.70893 7.94421 5.91921 8.16737L12 14.6205L18.0808 8.16737C18.2911 7.94421 18.632 7.94421 18.8423 8.16737C19.0526 8.39053 19.0526 8.75233 18.8423 8.97549L12.3808 15.8326C12.1705 16.0558 11.8295 16.0558 11.6193 15.8326L5.15771 8.97549C4.94743 8.75233 4.94743 8.39053 5.15771 8.16737Z" />
                   </svg>
                 </a>
+                <ul
+                  class="header-nav__item__dropdown absolute hidden group-hover:block mt-1 w-48 bg-white shadow-lg rounded-md p-2 z-10">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                      Link 1
+                    </a>
+
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 border-b border-[#D6D6D6]">
+                      Link2
+                    </a>
+
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Link 3
+                    </a>
+
+                  </li>
+                </ul>
               </li>
               <li class="header-nav__item">
                 <a href="#" class="header-nav__link">
@@ -754,7 +783,7 @@
                   </svg>
                 </a>
               </li>
-              <li class="header-nav__item">
+              <li class="header-nav__item header-nav__item--has-mega group">
                 <a href="#" class="header-nav__link">
                   <span>
                     Shop
@@ -765,6 +794,143 @@
                       d="M5.15771 8.16737C5.36799 7.94421 5.70893 7.94421 5.91921 8.16737L12 14.6205L18.0808 8.16737C18.2911 7.94421 18.632 7.94421 18.8423 8.16737C19.0526 8.39053 19.0526 8.75233 18.8423 8.97549L12.3808 15.8326C12.1705 16.0558 11.8295 16.0558 11.6193 15.8326L5.15771 8.97549C4.94743 8.75233 4.94743 8.39053 5.15771 8.16737Z" />
                   </svg>
                 </a>
+                <ul class="header-nav__mega-menu hidden group-hover:flex">
+                  <li class="header-nav__mega-column">
+                    <a href="#" class="header-nav__mega-title">Computers and Laptop</a>
+                    <ul class="header-nav__mega-list">
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Laptops
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Desktops
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Monitor and Display
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Printer Scanner
+                        </a>
+                      </li>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Office Appliances
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="header-nav__mega-link">
+                          Accessories
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="header-nav__mega-column">
+                    <a href="#" class="header-nav__mega-title">Mobile and Accessories</a>
+                    <ul class="header-nav__mega-list">
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Foldable Mobile
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Mini Mobile
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Air Phone
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Iphone
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="header-nav__mega-column">
+                    <a href="#" class="header-nav__mega-title">
+                      Wearable Technology
+                    </a>
+                    <ul class="header-nav__mega-list">
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Smart Watch
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Sports Watch
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Digital Watch
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Head cam
+                        </a>
+                      </li>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Headset VR
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="header-nav__mega-column">
+                    <a href="#" class="header-nav__mega-title">Printer Scanner</a>
+                    <ul class="header-nav__mega-list">
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Printer
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Scanner
+                        </a>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Router
+                        </a>
+                      <li>
+                        <a href="#" class="header-nav__mega-link">
+                          Cable
+                        </a>
+                      </li>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Office accessories
+                        </a>
+                      </li>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Extentions
+                        </a>
+                      </li>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Webcams
+                        </a>
+                      </li>
+                      <li class="header-nav__mega-item">
+                        <a href="#" class="header-nav__mega-link">
+                          Hubs
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="self-center xl:block hidden mx-auto">
+                    <a href="#" class="block">
+                      <img src="./assets/images/laptop-1.webp" class="w-full object-contain">
+                    </a>
+                    <p class="text-black text-center font-bold text-heading ">
+                      <a href="#">
+                        Best Laptop
+                      </a>
+                    </p>
+                  </li>
+                </ul>
               </li>
               <li class="header-nav__item">
                 <a href="#" class="header-nav__link">
